@@ -1,6 +1,6 @@
 // TDD Where Did It All Go Wrong //
 
-Problems with TDD:
+- Problems with TDD:
     - takes more time, and pressure from product managers to skip in order to have a quicker deliverable 
     - typically more test code than production code
     - tests break when you want to add features and are therefore an obstacle to change
@@ -8,7 +8,7 @@ Problems with TDD:
     - customers don't regard
     - devs don't see the value of their efforts
 
-The Bigger Problem:
+- The Bigger Problem:
     - original intent of TDD is good, but we've been led astray
     - testing is meant to test behaviors (ie the "stable contract" of your software), not implementation details because those change over time
         - "behavior-driven development": "test" is misunderstood

@@ -68,3 +68,8 @@ Greeting.defaultProps = {
 - for intentional implementation changes, need to update our snapshot artifacts
   - can run Jest with a flag that will tell it to re-generate snapshots ``jest --updateSnapshot``
   
+## React Testing Library
+## https://kentcdodds.com/blog/introducing-the-react-testing-library
+
+## More on Snapshot Testing
+### https://jestjs.io/docs/en/snapshot-testing

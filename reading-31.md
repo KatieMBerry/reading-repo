@@ -34,3 +34,29 @@
 ## React Hooks Toolbox
 ### https://blog.bitsrc.io/10-react-custom-hooks-you-should-have-in-your-toolbox-aa27d3f5564d
 - bookmarked
+
+## Context
+### https://reactjs.org/docs/context.html
+- Context provides a way to pass data through the component tree without having to pass props down manually at every level - YAY!
+  - for 'global' data like authenticated user, theeme, etc
+  - used when some data needs to be accessible by many components at different nesting levels
+    - downside: it makes component reuse more difficult
+  - create context with default value ``const MyContext = React.createContext(defaultValue);`` => ``const ThemeContext = React.createContext('light');``
+    - creates a Context object
+  - change value on components that need it ``<MyContext.Provider value={/* some value */}>`` => ``<ThemeContext.Provider value="dark">``
+    - defaultValue argument is only used when a component does not have a matching Provider above it in the tree
+    - One Provider can be connected to many consumers
+      - All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes
+    - Providers can be nested to override values deeper within the tree
+  - Assign a contextType to read the current theme context:
+```
+  // React will find the closest theme Provider above and use its value.
+  // In this example, the current theme is "dark".
+  static contextType = ThemeContext;
+  render() {
+    return <Button theme={this.context} />;
+  }
+  ```
+- another solution w/o context = pass down the component that needs props itself so that the intermediate components don’t need to know about it's props
+  - inversion of control can make cleaner code by reducing the amount of props needed to pass through app and gives more control to the root components
+    - downside: moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible 
